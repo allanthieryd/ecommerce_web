@@ -1,11 +1,17 @@
 import "../styles/globals.css"
 import { AppProps } from "next/app"
+import Header from "../components/header"
+import Footer from "../components/footer"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <main className="bg-purple-700 flex items-center justify-center h-screen">
-      <Component {...pageProps} />
-    </main>
+    <div className="bg-myprimary min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-grow flex items-center justify-center">
+        <Component {...pageProps} />
+      </main>
+      <Footer />
+    </div>
   )
 }
 

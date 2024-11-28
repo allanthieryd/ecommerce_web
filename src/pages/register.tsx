@@ -2,6 +2,7 @@
 import { useState } from "react"
 import { registerUser } from "../services/register"
 import { useRouter } from "next/router"
+import { Button } from "@/components/ui/button"
 
 export default function RegisterPage() {
   const [email, setEmail] = useState("")
@@ -14,8 +15,8 @@ export default function RegisterPage() {
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      await registerUser(email, password, nom, prenom) // Fonction d'inscription
-      router.push("/login") // Redirection après inscription
+      await registerUser(email, password, nom, prenom)
+      router.push("/login")
     } catch (err: any) {
       setError(err.message)
     }
@@ -65,12 +66,9 @@ export default function RegisterPage() {
             className="w-full border p-2 rounded"
           />
         </div>
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-black p-2 rounded"
-        >
-          S&apos;inscrire
-        </button>
+        <Button type="submit" variant="default" className="w-full mt-4">
+          Connexion
+        </Button>
       </form>
     </div>
   )

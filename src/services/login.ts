@@ -2,16 +2,16 @@ import { supabase } from "../utils/supabase"
 
 export async function loginUser(email: string, password: string) {
   // Connexion via Supabase Auth
-  const { data, error } = await supabase.auth.signInWithPassword({
+  const { data } = await supabase.auth.signInWithPassword({
     email,
     password,
   })
 
-  if (error || !data?.user) {
-    throw new Error("Utilisateur non trouvé ou mot de passe incorrect")
-  }
+  const user = data?.user
 
-  const user = data.user
+  if (!user) {
+    throw new Error("Confirmer votre adresse email pour vous connecter")
+  }
 
   // Vérifier l'existence de l'utilisateur dans la table personnalisée `utilisateurs`
   const { data: userDetails, error: userError } = await supabase
@@ -20,10 +20,9 @@ export async function loginUser(email: string, password: string) {
     .eq("id_utilisateur", user.id)
     .single()
 
+  // Gestion d'une erreur si l'utilisateur n'est pas trouvé dans la table personnalisée
   if (userError || !userDetails) {
-    throw new Error(
-      "Utilisateur non trouvé dans la base de données personnalisée",
-    )
+    throw new Error("Utilisateur non trouvé dans la base de données")
   }
 
   return {

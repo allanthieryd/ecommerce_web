@@ -1,12 +1,10 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable no-console */
 import { useState, useEffect } from "react"
-import { supabase } from "../utils/supabase"
-import { useRouter } from "next/router"
+import { supabase } from "../utils/supabase" // Assurez-vous que Supabase est correctement configuré
 
 function Page() {
   const [products, setProducts] = useState<any[]>([])
-  const router = useRouter()
 
   useEffect(() => {
     async function getProducts() {
@@ -27,20 +25,9 @@ function Page() {
     getProducts()
   }, [])
 
-  const handleRegisterRedirect = () => {
-    router.push("/register")
-  }
-
   return (
     <main>
       <div className="p-8 text-black rounded-xl w-full max-w-screen-lg">
-        <button
-          onClick={handleRegisterRedirect}
-          className="absolute top-4 right-4 bg-blue-500 text-white py-2 px-4 rounded"
-        >
-          S&apos;inscrire
-        </button>
-
         {products.length === 0 ? (
           <p className="text-center">Aucun produit trouvé</p>
         ) : (

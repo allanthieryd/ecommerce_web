@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { loginUser } from "../services/login"
 import { useRouter } from "next/router"
+import { Button } from "@/components/ui/button"
 
 export default function LoginPage() {
   const [email, setEmail] = useState("")
@@ -11,14 +12,11 @@ export default function LoginPage() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      // Appel à la fonction loginUser pour la connexion
       const user = await loginUser(email, password)
       if (user) {
-        // Redirection vers la page d'accueil après la connexion
-        router.push("/") // Redirection vers la page d'accueil
+        router.push("/")
       }
     } catch (err: any) {
-      // En cas d'erreur, afficher un message d'erreur
       setError(err.message)
     }
   }
@@ -46,12 +44,9 @@ export default function LoginPage() {
             className="w-full border p-2 rounded"
           />
         </div>
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-black p-2 rounded"
-        >
+        <Button type="submit" variant="default" className="w-full mt-4">
           Connexion
-        </button>
+        </Button>
       </form>
     </div>
   )

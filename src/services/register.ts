@@ -7,7 +7,6 @@ export async function registerUser(
   prenom: string,
   role = "utilisateur",
 ) {
-  // Création de l'utilisateur via Supabase Auth
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
@@ -17,13 +16,18 @@ export async function registerUser(
     throw new Error(error.message)
   }
 
+  if (data?.user) {
+    alert(
+      "Un email de confirmation a été envoyé. Merci de vérifier votre messagerie avant de vous connecter.",
+    )
+  }
+
   const user = data?.user
 
   if (!user) {
     throw new Error("Échec de la création de l'utilisateur")
   }
 
-  // Ajouter des informations personnalisées dans la table `utilisateurs`
   const { error: insertError } = await supabase.from("utilisateurs").insert([
     {
       id_utilisateur: user.id,

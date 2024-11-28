@@ -1,2 +1,2 @@
-tailwind.config.js
+tailwind.config.ts
 database.types.ts
