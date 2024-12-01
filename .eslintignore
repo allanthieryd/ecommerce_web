@@ -1,2 +1,3 @@
 tailwind.config.ts
 database.types.ts
+src/components/ui
