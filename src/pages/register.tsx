@@ -23,7 +23,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="flex justify-center items-center h-screen text-slate-700">
+    <div className="flex justify-center text-slate-700">
       <form
         onSubmit={handleRegister}
         className="bg-white p-6 rounded shadow-md"

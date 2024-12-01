@@ -36,7 +36,7 @@ const Header = () => {
             alt="logo"
             width={1080}
             height={358}
-            className="h-8 w-auto lg:h-10"
+            className="h-6 md:h-8 lg:h-10 w-auto"
             style={{ objectFit: "contain" }}
           />
         </Link>
