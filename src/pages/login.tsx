@@ -46,7 +46,7 @@ export default function LoginPage() {
 
     // Si une session existe, rediriger
     if (sessionData?.session?.user) {
-      router.push("/")
+      router.push("https://troisdevs-web.vercel.app/")
     } else {
       setError("Aucun utilisateur connecté.")
     }
