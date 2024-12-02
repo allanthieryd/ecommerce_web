@@ -48,6 +48,7 @@ const SearchBar = ({
         value={searchValue}
         onChange={handleInputChange}
         className="flex-grow px-4 py-2 text-gray-700 focus:outline-none"
+        alt="Barre de recherche"
       />
       <button
         onClick={handleSearch}

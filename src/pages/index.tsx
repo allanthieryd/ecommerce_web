@@ -28,25 +28,19 @@ function Page() {
   return (
     <main>
       <div className="p-8 text-black rounded-xl w-full max-w-screen-lg">
-        {products.length === 0 ? (
-          <p className="text-center">Aucun produit trouvé</p>
-        ) : (
-          <div className="flex flex-wrap justify-center gap-16">
-            {products.map((product, index) => (
-              <div
-                key={index}
-                className="w-full md:w-1/4 bg-gray-100 p-6 rounded-md shadow-md"
-              >
-                <h1 className="text-xl font-bold text-center mb-2">
-                  {product.nom}
-                </h1>
-                <p className="text-center text-gray-700">
-                  {product.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        )}
+        <div className="flex flex-wrap justify-center gap-16">
+          {products.map((product, index) => (
+            <div
+              key={index}
+              className="w-full md:w-1/4 bg-gray-100 p-6 rounded-md shadow-md"
+            >
+              <h1 className="text-xl font-bold text-center mb-2">
+                {product.nom}
+              </h1>
+              <p className="text-center text-gray-700">{product.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </main>
   )

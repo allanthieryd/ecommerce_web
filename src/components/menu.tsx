@@ -98,7 +98,7 @@ const Menu: React.FC = () => {
   return (
     <div className="relative">
       <button
-        className="text-white cursor-pointer md:text-xl text-sm"
+        className="text-white cursor-pointer md:text-xl ml-2"
         onClick={toggleMenu} // Utilise la fonction toggleMenu
       >
         ☰

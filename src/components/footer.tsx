@@ -23,14 +23,21 @@ export default function Footer() {
         </div>
 
         {/* Texte copyright en bas */}
-        <div className="mt-2 text-center text-sm text-slate-300">
+        <div className="mt-2 text-center text-sm text-slate-100">
           CYNA-IT SAS. © 2024 All rights reserved
         </div>
 
         {/* Logo LinkedIn - Aligné au centre */}
         <div className="mt-2">
           <Link href="https://www.linkedin.com/company/cyna-it" target="_blank">
-            <Image src="/LinkedIn.png" width={150} height={40} alt="LinkedIn" />
+            <Image
+              src="/LinkedIn.png"
+              width={150}
+              height={40}
+              alt="LinkedIn"
+              className="md:w-36 md:h-auto w-20 h-auto object-contain"
+              priority
+            />
           </Link>
         </div>
       </div>

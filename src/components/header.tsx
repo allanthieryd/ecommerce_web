@@ -18,9 +18,18 @@ const Header = () => {
           <Image
             src="/logo.png"
             alt="logo"
+            priority
             width={1080}
             height={358}
-            className="h-6 md:h-8 lg:h-10 w-auto object-contain"
+            className="hidden md:block h-6 md:h-8 lg:h-10 w-auto object-contain"
+          />
+          <Image
+            className="md:hidden h-12 w-auto left-0"
+            src="/logo-r.png"
+            alt="logo"
+            priority
+            height={358}
+            width={1080}
           />
         </Link>
 
