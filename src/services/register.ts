@@ -7,6 +7,18 @@ export async function registerUser(
   prenom: string,
   role = "utilisateur",
 ) {
+  // Vérification de la force du mot de passe
+  const passwordRegex = /^(?=.*[!@#$%^&*(),.?":{}|<>]).{6,}$/
+  if (password.length < 6) {
+    throw new Error("Le mot de passe doit contenir au moins 6 caractères.")
+  }
+
+  if (!passwordRegex.test(password)) {
+    throw new Error(
+      "Le mot de passe doit contenir au moins un caractère spécial.",
+    )
+  }
+
   const { data, error } = await supabase.auth.signUp({
     email,
     password,

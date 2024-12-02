@@ -9,7 +9,13 @@ export async function loginUser(email: string, password: string) {
 
   const user = data?.user
 
+  // Vérifier si l'utilisateur existe
   if (!user) {
+    throw new Error("Utilisateur ou mot de passe incorrect.")
+  }
+
+  // Vérifier si l'email a été confirmé
+  if (!user.email_confirmed_at) {
     throw new Error("Confirmer votre adresse email pour vous connecter")
   }
 
@@ -22,7 +28,7 @@ export async function loginUser(email: string, password: string) {
 
   // Gestion d'une erreur si l'utilisateur n'est pas trouvé dans la table personnalisée
   if (userError || !userDetails) {
-    throw new Error("Utilisateur non trouvé dans la base de données")
+    throw new Error("Utilisateur non trouvé dans la base de données.")
   }
 
   return {
