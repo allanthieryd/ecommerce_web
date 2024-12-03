@@ -52,7 +52,7 @@ const SearchBar = ({
       />
       <button
         onClick={handleSearch}
-        className="text-white sm:px-4 py-2 flex items-center transition duration-200 ease-in-out"
+        className="sm:px-4 py-2 flex items-center transition duration-200 ease-in-out"
       >
         <SearchIcon className="md:h-5 h-3 md:w-5 w-3 sm:mr-0 mr-2" />
       </button>

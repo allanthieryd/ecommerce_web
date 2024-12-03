@@ -1,8 +1,7 @@
-// /pages/register.tsx
 import { useState } from "react"
-import { registerUser } from "../services/register"
 import { useRouter } from "next/router"
 import { Button } from "@/components/ui/button"
+import { registerUser, registerWithGithub } from "@/services/register"
 
 export default function RegisterPage() {
   const [email, setEmail] = useState("")
@@ -12,11 +11,26 @@ export default function RegisterPage() {
   const [error, setError] = useState("")
   const router = useRouter()
 
+  // Fonction pour l'inscription avec email et mot de passe
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      await registerUser(email, password, nom, prenom)
-      router.push("/login")
+      const user = await registerUser(email, password, nom, prenom)
+      if (user) {
+        router.push("/")
+      }
+    } catch (err: any) {
+      setError(err.message)
+    }
+  }
+
+  // Fonction pour l'inscription via GitHub
+  const handleGithubRegister = async () => {
+    try {
+      const user = await registerWithGithub()
+      if (user) {
+        router.push("/")
+      }
     } catch (err: any) {
       setError(err.message)
     }
@@ -67,8 +81,18 @@ export default function RegisterPage() {
           />
         </div>
         <Button type="submit" variant="default" className="w-full mt-4">
-          Connexion
+          S&apos;inscrire
         </Button>
+        {/* Bouton pour l'inscription via GitHub */}
+        <div className="mt-4 text-center">
+          <Button
+            variant="outline"
+            className="w-full mt-2"
+            onClick={handleGithubRegister}
+          >
+            S&apos;inscrire avec GitHub
+          </Button>
+        </div>
       </form>
     </div>
   )

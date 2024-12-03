@@ -37,3 +37,22 @@ export async function loginUser(email: string, password: string) {
     role: userDetails.role,
   }
 }
+
+export const loginWithGithub = async () => {
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: "github",
+  })
+  if (error) throw new Error(error.message)
+
+  // Récupérez la session après la connexion OAuth
+  const { data: sessionData, error: sessionError } =
+    await supabase.auth.getSession()
+  if (sessionError) throw new Error(sessionError.message)
+
+  // Vérifiez que l'utilisateur est connecté
+  if (sessionData?.session?.user) {
+    return sessionData.session.user
+  } else {
+    throw new Error("Erreur lors de la connexion via GitHub.")
+  }
+}
