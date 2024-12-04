@@ -1,31 +1,59 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
-import { supabase } from "../../utils/supabase"
+import { supabase } from "@/utils/supabase"
 import { Button } from "@/components/ui/button"
 
 export default function ResetPasswordPage() {
   const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
   const [error, setError] = useState("")
   const [success, setSuccess] = useState(false)
   const router = useRouter()
-  const { access_token } = router.query // Récupère le token de réinitialisation depuis l'URL
 
   useEffect(() => {
-    if (!access_token) {
-      setError("Aucun token trouvé. Veuillez essayer à nouveau.")
+    if (router.isReady) {
+      const { access_token } = router.query
+
+      if (!access_token) {
+        router.replace("/auth/login")
+        return
+      }
+
+      const verifyToken = async () => {
+        const { data, error } = await supabase.auth.getUser(
+          access_token as string,
+        )
+        if (error || !data) {
+          router.replace("/auth/login")
+        }
+      }
+      verifyToken()
     }
-  }, [access_token])
+  }, [router.isReady, router.query, router])
+
+  const validatePassword = (password: string): boolean => {
+    const passwordRegex = /^(?=.*[!@#$%^&*(),.?":{}|<>]).{6,}$/
+    return passwordRegex.test(password)
+  }
 
   const handleResetPassword = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!access_token) {
-      setError("Token de réinitialisation manquant.")
+
+    if (password !== confirmPassword) {
+      setError("Les mots de passe ne correspondent pas.")
+      return
+    }
+
+    if (!validatePassword(password)) {
+      setError(
+        "Le mot de passe doit contenir au moins un caractère spécial et au moins 6 caractères.",
+      )
       return
     }
 
     try {
       const { error } = await supabase.auth.updateUser({
-        password, // Le nouveau mot de passe
+        password,
       })
       if (error) throw new Error(error.message)
 
@@ -57,6 +85,15 @@ export default function ResetPasswordPage() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                className="w-full border p-2 rounded"
+              />
+            </div>
+            <div className="mb-4">
+              <label>Confirmer le mot de passe</label>
+              <input
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 className="w-full border p-2 rounded"
               />
             </div>

@@ -1,7 +1,7 @@
 /* eslint-disable max-lines-per-function */
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { supabase } from "../../utils/supabase"
+import { supabase } from "@/utils/supabase"
 
 export default function ForgetPasswordPage() {
   const [email, setEmail] = useState("")

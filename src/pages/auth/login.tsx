@@ -17,6 +17,7 @@ export default function LoginPage() {
       const user = await loginUser(email, password)
       if (user) {
         router.push("/")
+        router.reload()
       }
     } catch (err: any) {
       setError(err.message)

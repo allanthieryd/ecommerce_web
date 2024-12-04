@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import { useState } from "react"
 import { useRouter } from "next/router"
 import { Button } from "@/components/ui/button"
@@ -6,6 +7,7 @@ import { registerUser, registerWithGithub } from "@/services/register"
 export default function RegisterPage() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
   const [nom, setNom] = useState("")
   const [prenom, setPrenom] = useState("")
   const [error, setError] = useState("")
@@ -14,6 +16,13 @@ export default function RegisterPage() {
   // Fonction pour l'inscription avec email et mot de passe
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    // Vérification que les mots de passe correspondent
+    if (password !== confirmPassword) {
+      setError("Les mots de passe ne correspondent pas")
+      return
+    }
+
     try {
       const user = await registerUser(email, password, nom, prenom)
       if (user) {
@@ -44,7 +53,7 @@ export default function RegisterPage() {
       >
         <h1 className="text-2xl mb-4">Inscription</h1>
         {error && <p className="text-red-500">{error}</p>}
-        <div className="mb-4">
+        <div className="mb-3">
           <label>Nom</label>
           <input
             type="text"
@@ -53,7 +62,7 @@ export default function RegisterPage() {
             className="w-full border p-2 rounded"
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-3">
           <label>Prénom</label>
           <input
             type="text"
@@ -62,7 +71,7 @@ export default function RegisterPage() {
             className="w-full border p-2 rounded"
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-3">
           <label>Email</label>
           <input
             type="email"
@@ -71,12 +80,21 @@ export default function RegisterPage() {
             className="w-full border p-2 rounded"
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-3">
           <label>Mot de passe</label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="w-full border p-2 rounded"
+          />
+        </div>
+        <div className="mb-3">
+          <label>Confirmer le mot de passe</label>
+          <input
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             className="w-full border p-2 rounded"
           />
         </div>
