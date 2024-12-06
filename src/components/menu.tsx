@@ -82,8 +82,8 @@ const Menu: React.FC = () => {
         { label: "Se déconnecter", action: handleLogout },
       ]
     : [
-        { href: "/login", label: "Se connecter" },
-        { href: "/register", label: "S'inscrire" },
+        { href: "/auth/login", label: "Se connecter" },
+        { href: "/auth/register", label: "S'inscrire" },
         { href: "/cgu", label: "CGU" },
         { href: "/mentions-legales", label: "Mentions légales" },
         { href: "/contact", label: "Contact" },

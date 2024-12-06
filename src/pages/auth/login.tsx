@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { useRouter } from "next/router"
 import { Button } from "@/components/ui/button"
-import { supabase } from "../utils/supabase" // Assurez-vous que Supabase est correctement configuré
+import { loginUser, loginWithGithub } from "@/services/login"
+import Link from "next/link"
 
 export default function LoginPage() {
   const [email, setEmail] = useState("")
@@ -13,42 +14,26 @@ export default function LoginPage() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      })
-      if (error) throw new Error(error.message)
-      if (data?.user) {
-        router.push("/")
+      const user = await loginUser(email, password)
+      if (user) {
+        router.push("/").then(() => {
+          router.reload()
+        })
       }
     } catch (err: any) {
       setError(err.message)
     }
   }
 
-  // Fonction de connexion avec GitHub
+  // Fonction pour la connexion via GitHub
   const handleGithubLogin = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: "github",
-    })
-    if (error) {
-      setError(error.message)
-      return
-    }
-
-    // Vérifier la session après la connexion
-    const { data: sessionData, error: sessionError } =
-      await supabase.auth.getSession()
-    if (sessionError) {
-      setError(sessionError.message)
-      return
-    }
-
-    // Si une session existe, rediriger
-    if (sessionData?.session?.user) {
-      router.push("https://troisdevs-web.vercel.app/")
-    } else {
-      setError("Aucun utilisateur connecté.")
+    try {
+      const user = await loginWithGithub()
+      if (user) {
+        router.push("/")
+      }
+    } catch (err: any) {
+      setError(err.message)
     }
   }
 
@@ -78,6 +63,7 @@ export default function LoginPage() {
         <Button type="submit" variant="default" className="w-full mt-4">
           Connexion
         </Button>
+
         {/* Bouton de connexion avec GitHub */}
         <div className="mt-4 text-center">
           <Button
@@ -87,6 +73,14 @@ export default function LoginPage() {
           >
             Se connecter avec GitHub
           </Button>
+        </div>
+
+        <div className="mt-4 text-center">
+          <Link href="/auth/forgetPassword">
+            <Button variant="link" className="w-full mt-2">
+              Mot de passe oublié ?
+            </Button>
+          </Link>
         </div>
       </form>
     </div>
