@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import { supabase } from "@/utils/supabase"
@@ -11,24 +12,39 @@ export default function ResetPasswordPage() {
   const router = useRouter()
 
   useEffect(() => {
-    if (router.isReady) {
-      const { access_token } = router.query
-
-      if (!access_token) {
-        router.replace("/auth/login")
-        return
-      }
-
-      const verifyToken = async () => {
-        const { data, error } = await supabase.auth.getUser(
-          access_token as string,
-        )
-        if (error || !data) {
-          router.replace("/auth/login")
-        }
-      }
-      verifyToken()
+    // Manipulation de l'URL pour convertir le hash en query paramètre
+    if (window.location.hash) {
+      const hash = window.location.hash.substring(1) // Supprime le #
+      const queryParams = new URLSearchParams(hash)
+      const newUrl = `${window.location.pathname}?${queryParams.toString()}`
+      window.history.replaceState(null, "", newUrl)
+      router.replace(newUrl) // Synchronise avec Next.js
     }
+  }, [router])
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (router.isReady) {
+        const { access_token } = router.query
+
+        if (!access_token) {
+          router.replace("/auth/login")
+          return
+        }
+
+        const verifyToken = async () => {
+          const { data, error } = await supabase.auth.getUser(
+            access_token as string,
+          )
+          if (error || !data) {
+            router.replace("/auth/login")
+          }
+        }
+        verifyToken()
+      }
+    }, 1000) // Ajoute un délai d'une seconde
+
+    return () => clearTimeout(timeout) // Nettoie le timeout si le composant est démonté
   }, [router.isReady, router.query, router])
 
   const validatePassword = (password: string): boolean => {
