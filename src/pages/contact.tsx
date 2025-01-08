@@ -18,34 +18,34 @@ const CONTACT: React.FC = () => {
                 type="text"
                 id="name"
                 name="name"
-                className="border p-2 rounded bg-violet-100"
+                className="text-violet-700 border p-2 rounded bg-violet-100"
                 />
                 <label className="text-violet-700 pt-6 font-bold" htmlFor="firstname">Prénom *</label>
                 <input
                 type="text"
                 id="firstname"
                 name="firstname"
-                className="border p-2 rounded bg-violet-100"
+                className="text-violet-700 border p-2 rounded bg-violet-100"
                 />
                 <label className="text-violet-700 pt-6 font-bold" htmlFor="email">E-mail *</label>
                 <input
                 type="email"
                 id="email"
                 name="email"
-                className="border p-2 rounded bg-violet-100"
+                className="text-violet-700 border p-2 rounded bg-violet-100"
                 />
                 <label className="text-violet-700 pt-6 font-bold" htmlFor="phone">Numéro de téléphone</label>
                 <input
                 type="tel"
                 id="phone"
                 name="phone"
-                className="border p-2 rounded bg-violet-100"
+                className="text-violet-700 border p-2 rounded bg-violet-100"
                 />
                 <label className="text-violet-700 pt-6 font-bold" htmlFor="message">Message</label>
                 <textarea
                 id="message"
                 name="message"
-                className="border p-2 rounded bg-violet-100"
+                className="text-violet-700 border p-2 rounded bg-violet-100"
                 />
                 <button type="submit" className="bg-violet-500 text-white font-bold p-2 rounded-full mt-4 w-1/3 mx-auto">
                 Envoyer
