@@ -9,27 +9,18 @@ const Menu: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [connected, setConnected] = useState(false)
   const menuRef = useRef<HTMLDivElement | null>(null)
+  const buttonRef = useRef<HTMLButtonElement | null>(null) // Ref pour le bouton
   const router = useRouter()
 
-  // Fonction pour vérifier si l'utilisateur est connecté
   const isLogged = async () => {
     try {
       const res = await axios.get("/api/connection")
       const { loggedIn } = res.data
       setConnected(loggedIn)
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        await axios.post("/api/logError", {
-          message: "User is not logged in",
-          error: error.message,
-        })
-      } else {
-        await axios.post("/api/logError", {
-          message: "User is not logged in",
-          error: "Unknown error occurred",
-        })
+    } catch (e) {
+      if (e instanceof Error) {
+        setConnected(false)
       }
-      setConnected(false)
     }
   }
 
@@ -37,16 +28,19 @@ const Menu: React.FC = () => {
     isLogged()
 
     const handleClickOutside = (event: MouseEvent) => {
-      // Si le clic se fait à l'extérieur du menu et du bouton, on ferme le menu
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      // Vérifie si le clic est en dehors du menu ET du bouton
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
         setIsMenuOpen(false)
       }
     }
 
-    // Ajout de l'écouteur d'événements pour détecter le clic à l'extérieur
     document.addEventListener("mousedown", handleClickOutside)
 
-    // Nettoyage de l'événement lors du démontage
     return () => {
       document.removeEventListener("mousedown", handleClickOutside)
     }
@@ -63,14 +57,12 @@ const Menu: React.FC = () => {
     }
   }, [router])
 
-  // Fonction de déconnexion
   const handleLogout = async () => {
     await axios.post("/api/logout")
     setConnected(false)
     router.push("/")
   }
 
-  // Menu basé sur l'état de connexion
   const menuLinks = connected
     ? [
         { href: "/profile", label: "Mes paramètres" },
@@ -90,7 +82,6 @@ const Menu: React.FC = () => {
         { href: "/about", label: "À propos de Cyna" },
       ]
 
-  // Fonction pour basculer l'état du menu (ouvrir ou fermer)
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev)
   }
@@ -98,6 +89,7 @@ const Menu: React.FC = () => {
   return (
     <div className="relative">
       <button
+        ref={buttonRef} // Ajout de la ref pour le bouton
         className="text-white cursor-pointer md:text-xl ml-2"
         onClick={toggleMenu} // Utilise la fonction toggleMenu
       >
@@ -107,7 +99,7 @@ const Menu: React.FC = () => {
         ref={menuRef}
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } absolute right-0 top-full mt-2 bg-white p-4 rounded-lg shadow-lg w-56`}
+        } absolute right-0 top-full mt-2 bg-white p-4 rounded-lg shadow-lg w-56 z-50`}
       >
         {menuLinks.map((link, index) =>
           link.action ? (
