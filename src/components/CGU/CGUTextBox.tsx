@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useState, useEffect } from "react"
 
 const CGUTextBox = () => {
@@ -18,7 +19,7 @@ const CGUTextBox = () => {
   return (
     <div className="container mx-auto py-10 px-8">
       <h1 className="text-4xl font-bold mb-6 text-center">
-        Conditions Générales d'Utilisation
+        Conditions Générales d&apos;Utilisation
       </h1>
       <textarea
         value={cguContent}
