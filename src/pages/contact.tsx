@@ -19,8 +19,6 @@ export default function ContactPage() {
     }
   }
 
-  
-
   return (
     <>
       <main>
@@ -104,4 +102,3 @@ export default function ContactPage() {
     </>
   )
 }
-
