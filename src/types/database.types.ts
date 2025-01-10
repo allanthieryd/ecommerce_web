@@ -141,6 +141,36 @@ export type Database = {
         }
         Relationships: []
       }
+      contact: {
+        row: {
+          id_message: string
+          nom: string
+          prenom: string
+          email: string
+          created_at: string | null
+          num: string
+          message: string
+        }
+        insert: {
+          id_message: number
+          nom: string
+          prenom: string
+          email: string
+          num: string
+          message: string
+          created_at: string | null
+        }
+        update: {
+          id_message: number
+          nom: string
+          prenom: string
+          email: string
+          num: string
+          message: string
+          created_at: string | null
+        }
+        relationships: []
+      }
     }
     Views: {
       [_ in never]: never

@@ -1,6 +1,26 @@
 import React from "react"
+import { useState } from "react"
+import { contactMessage } from "@/services/contact"
 
-const CONTACT: React.FC = () => {
+export default function ContactPage() {
+  const [email, setEmail] = useState("")
+  const [nom, setNom] = useState("")
+  const [prenom, setPrenom] = useState("")
+  const [num, setNum] = useState("")
+  const [message, setMessage] = useState("")
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    try {
+      await contactMessage(email, nom, prenom, num, message)
+    } catch (err: any) {
+      alert(err.message)
+    }
+  }
+
+  
+
   return (
     <>
       <main>
@@ -21,6 +41,8 @@ const CONTACT: React.FC = () => {
               type="text"
               id="name"
               name="name"
+              value={nom}
+              onChange={(e) => setNom(e.target.value)}
               className="text-violet-700 border p-2 rounded bg-violet-100"
             />
             <label
@@ -33,6 +55,8 @@ const CONTACT: React.FC = () => {
               type="text"
               id="firstname"
               name="firstname"
+              value={prenom}
+              onChange={(e) => setPrenom(e.target.value)}
               className="text-violet-700 border p-2 rounded bg-violet-100"
             />
             <label className="text-violet-700 pt-6 font-bold" htmlFor="email">
@@ -42,6 +66,8 @@ const CONTACT: React.FC = () => {
               type="email"
               id="email"
               name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="text-violet-700 border p-2 rounded bg-violet-100"
             />
             <label className="text-violet-700 pt-6 font-bold" htmlFor="phone">
@@ -51,6 +77,8 @@ const CONTACT: React.FC = () => {
               type="tel"
               id="phone"
               name="phone"
+              value={num}
+              onChange={(e) => setNum(e.target.value)}
               className="text-violet-700 border p-2 rounded bg-violet-100"
             />
             <label className="text-violet-700 pt-6 font-bold" htmlFor="message">
@@ -59,11 +87,14 @@ const CONTACT: React.FC = () => {
             <textarea
               id="message"
               name="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               className="text-violet-700 border p-2 rounded bg-violet-100"
             />
             <button
               type="submit"
               className="bg-violet-500 text-white font-bold p-2 rounded-full mt-4 w-1/3 mx-auto"
+              onClick={handleSubmit}
             >
               Envoyer
             </button>
@@ -74,4 +105,3 @@ const CONTACT: React.FC = () => {
   )
 }
 
-export default CONTACT
