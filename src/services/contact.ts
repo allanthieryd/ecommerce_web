@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { supabase } from "../utils/supabase"
 
 export async function contactMessage(

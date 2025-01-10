@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react"
 import CGUTextBox from "../components/CGU/CGUTextBox" // Import direct avec ?raw (Vite spécifique)
 
