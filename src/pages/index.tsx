@@ -1,7 +1,6 @@
-/* eslint-disable max-lines-per-function */
 /* eslint-disable no-console */
 import { useState, useEffect } from "react"
-import { supabase } from "../utils/supabase" // Assurez-vous que Supabase est correctement configuré
+import { supabase } from "../utils/supabase"
 
 function Page() {
   const [products, setProducts] = useState<any[]>([])

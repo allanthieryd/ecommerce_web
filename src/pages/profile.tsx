@@ -50,12 +50,14 @@ function Account() {
 
   return (
     <main>
-      <div className="container mx-auto bg-mysecondary shadow-md rounded-lg px-12 py-8">
-        <h1 className="text-3xl font-semibold text-center mb-6">Mon Compte</h1>
+      <div className="container mx-auto bg-white shadow-md rounded-lg px-12 py-8">
+        <h1 className="text-3xl font-semibold text-center mb-6 text-black">
+          Mon Compte
+        </h1>
         {userInfo ? (
           <div className="space-y-4">
             <div className="flex flex-col">
-              <label className="font-medium text-lg" htmlFor="nom">
+              <label className="font-medium text-lg text-black" htmlFor="nom">
                 Nom
               </label>
               <input
@@ -63,12 +65,15 @@ function Account() {
                 type="text"
                 value={userInfo.nom}
                 readOnly
-                className="p-2 border rounded-md bg-gray-100 text-black"
+                className="p-2 border rounded-md bg-gray-100 text-gray-600"
               />
             </div>
 
             <div className="flex flex-col">
-              <label className="font-medium text-lg" htmlFor="prenom">
+              <label
+                className="font-medium text-lg  text-black"
+                htmlFor="prenom"
+              >
                 Prénom
               </label>
               <input
@@ -76,12 +81,12 @@ function Account() {
                 type="text"
                 value={userInfo.prenom}
                 readOnly
-                className="p-2 border rounded-md bg-gray-100 text-black"
+                className="p-2 border rounded-md bg-gray-100 text-gray-600"
               />
             </div>
 
             <div className="flex flex-col">
-              <label className="font-medium text-lg" htmlFor="email">
+              <label className="font-medium text-lg text-black" htmlFor="email">
                 Email
               </label>
               <input
@@ -89,7 +94,7 @@ function Account() {
                 type="text"
                 value={userInfo.email}
                 readOnly
-                className="p-2 border rounded-md bg-gray-100 text-black"
+                className="p-2 border rounded-md bg-gray-100  text-gray-600"
               />
             </div>
           </div>
