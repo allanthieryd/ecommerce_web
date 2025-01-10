@@ -196,7 +196,7 @@ const Cart = () => {
           />
           <Button
             onClick={handleApplyPromoCode}
-            className="w-full px-6 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full px-6 py-2 bg-ctaButton text-white rounded-lg shadow-md hover:bg-ctaButton2 focus:outline-none focus:ring-2 focus:ring-neutral-200"
           >
             Appliquer
           </Button>

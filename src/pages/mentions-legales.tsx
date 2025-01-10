@@ -22,7 +22,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               Prestations et services :{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               met à disposition des clients :
             </p>
             <p className="pb-6">
@@ -35,7 +35,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               d’être détenues par{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               pour la gestion de votre compte, de la gestion de la relation
               client et à des fins d’analyses et de statistiques.
             </p>
@@ -67,7 +67,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               utilisateurs du site{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               l’identité des différents intervenants dans le cadre de sa
               réalisation et de son suivi :
             </p>
@@ -124,7 +124,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               L’utilisation du site{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               implique l’acceptation pleine et entière des conditions générales
               d’utilisation ci-après décrites. Ces conditions d’utilisation sont
               susceptibles d’être modifiées ou complétées à tout moment, les
@@ -145,11 +145,11 @@ const MENTIONS_LEGALES: React.FC = () => {
               utilisateurs les dates et heures de l’intervention. Le site web{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               est mis à jour régulièrement par{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               responsable. De la même façon, les mentions légales peuvent être
               modifiées à tout moment : elles s’imposent néanmoins à
               l’utilisateur qui est invité à s’y référer le plus souvent
@@ -165,16 +165,16 @@ const MENTIONS_LEGALES: React.FC = () => {
               Le site internet{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               a pour objet de fournir une information concernant l’ensemble des
               activités de la société.{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               s’efforce de fournir sur le site{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               des informations aussi précises que possible. Toutefois, il ne
               pourra être tenu responsable des oublis, des inexactitudes et des
               carences dans la mise à jour, qu’elles soient de son fait ou du
@@ -184,12 +184,12 @@ const MENTIONS_LEGALES: React.FC = () => {
               Toutes les informations indiquées sur le site{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               sont données à titre indicatif, et sont susceptibles d’évoluer.
               Par ailleurs, les renseignements figurant sur le site{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               ne sont pas exhaustifs. Ils sont donnés sous réserve de
               modifications ayant été apportées depuis leur mise en ligne.
             </p>
@@ -204,11 +204,11 @@ const MENTIONS_LEGALES: React.FC = () => {
               pourra être tenu responsable de dommages matériels liés à
               l’utilisation du site. De plus, l’utilisateur du site s’engage à
               accéder au site en utilisant un matériel récent, ne contenant pas
-              de virus et avec un navigateur de dernière génération mis-à-jour
-              le site{" "}
+              de virus et avec un navigateur de dernière génération mis-à-jour.
+              Le site{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               est hébergé chez un prestataire sur le territoire de l’union
               européenne conformément aux dispositions du règlement général sur
               la protection des données (rgpd : n° 2016-679)
@@ -224,7 +224,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               un trafic réputé anormal.{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               et l’hébergeur ne pourront être tenus responsables en cas de
               dysfonctionnement du réseau internet, des lignes téléphoniques ou
               du matériel informatique et de téléphonie lié notamment à
@@ -239,7 +239,7 @@ const MENTIONS_LEGALES: React.FC = () => {
             <p className="pb-6">
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               est propriétaire des droits de propriété intellectuelle et détient
               les droits d’usage sur tous les éléments accessibles sur le site
               internet, notamment les textes, images, graphismes, logos, vidéos,
@@ -267,21 +267,21 @@ const MENTIONS_LEGALES: React.FC = () => {
             <p className="pb-6">
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               agit en tant qu’éditeur du site.
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               est responsable de la qualité et de la véracité du contenu qu’il
               publie.
             </p>
             <p className="pb-6">
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               ne pourra être tenu responsable des dommages directs et indirects
               causés au matériel de l’utilisateur, lors de l’accès au site
-              internet
+              internet{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
               </a>
@@ -292,7 +292,7 @@ const MENTIONS_LEGALES: React.FC = () => {
             <p>
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               ne pourra également être tenu responsable des dommages indirects
               (tels par exemple qu’une perte de marché ou perte d’une chance)
               consécutifs à l’utilisation du site{" "}
@@ -303,14 +303,14 @@ const MENTIONS_LEGALES: React.FC = () => {
               l’espace contact) sont à la disposition des utilisateurs.{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               se réserve le droit de supprimer, sans mise en demeure préalable,
               tout contenu déposé dans cet espace qui contreviendrait à la
               législation applicable en France, en particulier aux dispositions
               relatives à la protection des données. Le cas échéant,{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               se réserve également la possibilité de mettre en cause la
               responsabilité civile et/ou pénale de l’utilisateur, notamment en
               cas de message à caractère raciste, injurieux
@@ -338,14 +338,14 @@ const MENTIONS_LEGALES: React.FC = () => {
               est : cyna-it.{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               est représenté par bramli nathan, son représentant légal.
             </p>
             <p className="pb-6">
               En tant que responsable du traitement des données qu’il collecte,{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               s’engage à respecter le cadre des dispositions légales en vigueur.
               Il lui appartient notamment au client d’établir les finalités de
               ses traitements de données, de fournir à ses prospects et clients,
@@ -359,20 +359,20 @@ const MENTIONS_LEGALES: React.FC = () => {
               traite des données personnelles,
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               prend toutes les mesures raisonnables pour s’assurer de
               l’exactitude et de la pertinence des données personnelles au
               regard des finalités pour lesquelles{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               les traite.
             </p>
             <p className="py-1">7.2 finalité des données collectées</p>
             <p>
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               est susceptible de traiter tout ou partie des données :
             </p>
             <p>
@@ -402,7 +402,7 @@ const MENTIONS_LEGALES: React.FC = () => {
             <p className="pb-6">
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               ne commercialise pas vos données personnelles qui sont donc
               uniquement utilisées par nécessité ou à des fins statistiques et
               d’analyses.
@@ -415,7 +415,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               utilisateurs de{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               disposent des droits suivants :
             </p>
             <p>
@@ -488,7 +488,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               qu’il souhaiterait que{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               corrige, mette à jour ou supprime, en s’identifiant précisément
               avec une copie d’une pièce d’identité (carte d’identité ou
               passeport).
@@ -498,12 +498,12 @@ const MENTIONS_LEGALES: React.FC = () => {
               soumises aux obligations qui sont imposées à{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               par la loi, notamment en matière de conservation ou d’archivage
               des documents. Enfin, les utilisateurs de{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               peuvent déposer une réclamation auprès des autorités de contrôle,
               et notamment de la CNIL (https://www.cnil.fr/fr/plaintes).
             </p>
@@ -513,14 +513,14 @@ const MENTIONS_LEGALES: React.FC = () => {
             <p className="pb-6">
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               s’interdit de traiter, héberger ou transférer les informations
               collectées sur ses clients vers un pays situé en dehors de l’union
               européenne ou reconnu comme « non adéquat » par la commission
               européenne sans en informer préalablement le client. Pour autant,{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               reste libre du choix de ses sous-traitants techniques et
               commerciaux à la condition qu’il présentent les garanties
               suffisantes au regard des exigences du règlement général sur la
@@ -529,7 +529,7 @@ const MENTIONS_LEGALES: React.FC = () => {
             <p className="pb-6">
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               s’engage à prendre toutes les précautions nécessaires afin de
               préserver la sécurité des informations et notamment qu’elles ne
               soient pas communiquées à des personnes non autorisées. Cependant,
@@ -550,7 +550,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               par des filiales de{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               et des sous-traitants (prestataires de services), exclusivement
               afin de réaliser les finalités de la présente politique.
             </p>
@@ -588,13 +588,13 @@ const MENTIONS_LEGALES: React.FC = () => {
               Aucune information personnelle de l’utilisateur du site{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               n’est publiée à l’insu de l’utilisateur, échangée, transférée,
               cédée ou vendue sur un support quelconque à des tiers. Seule
               l’hypothèse du rachat de{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               et de ses droits permettrait la transmission des dites
               informations à l’éventuel acquéreur qui serait à son tour tenu de
               la même obligation de conservation et de modification des données
@@ -610,16 +610,19 @@ const MENTIONS_LEGALES: React.FC = () => {
               personnelles et des données personnelles de santé,{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               utilise des réseaux protégés par des dispositifs standards tels
               que par pare-feu, la pseudonymisation, l’encryption et mot de
               passe.
             </p>
             <p>
-              Lors du traitement des données personnelles,
-              https://www.cyna-it.frprend toutes les mesures raisonnables visant
-              à les protéger contre toute perte, utilisation détournée, accès
-              non autorisé, divulgation, altération ou destruction.
+              Lors du traitement des données personnelles,{" "}
+              <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
+                https://www.cyna-it.fr
+              </a>{" "}
+              prend toutes les mesures raisonnables visant à les protéger contre
+              toute perte, utilisation détournée, accès non autorisé,
+              divulgation, altération ou destruction.
             </p>
           </div>
 
@@ -631,7 +634,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               Le site{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               contient un certain nombre de liens hypertextes vers d’autres
               sites, mis en place avec l’autorisation de{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
@@ -640,7 +643,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               . Cependant,{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               n’a pas la possibilité de vérifier le contenu des sites ainsi
               visités, et n’assumera en conséquence aucune responsabilité de ce
               fait.
@@ -689,7 +692,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               enregistré dans son terminal.{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               informe l’utilisateur que, dans ce cas, il se peut que les
               fonctionnalités de son logiciel de navigation ne soient pas toutes
               disponibles.
@@ -702,7 +705,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               également être le cas lorsque{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               ou l’un de ses prestataires ne peut pas reconnaître, à des fins de
               compatibilité technique, le type de navigateur utilisé par le
               terminal, les paramètres de langue et d’affichage ou le pays
@@ -712,7 +715,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               Le cas échéant,{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               décline toute responsabilité pour les conséquences liées au
               fonctionnement dégradé du site et des services éventuellement
               proposés par{" "}
@@ -723,7 +726,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               l’impossibilité pour{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               d’enregistrer ou de consulter les cookies nécessaires à leur
               fonctionnement du fait du choix de l’utilisateur. Pour la gestion
               des cookies et des choix de l’utilisateur, la configuration de
@@ -736,7 +739,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               modifier ses souhaits en matière de cookies.{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               pourra en outre faire appel aux services de prestataires externes
               pour l’aider à recueillir et traiter les informations décrites
               dans cette section.
@@ -746,7 +749,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               twitter, facebook, linkedin et google plus figurant sur le site de{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               ou dans son application mobile et si l’utilisateur a accepté le
               dépôt de cookies en poursuivant sa navigation sur le site internet
               ou l’application mobile de{" "}
@@ -764,18 +767,18 @@ const MENTIONS_LEGALES: React.FC = () => {
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
               </a>
-              . A€ tout moment, l’utilisateur peut néanmoins revenir sur son
+              . A tout moment, l’utilisateur peut néanmoins revenir sur son
               consentement à ce que{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               dépose ce type de cookies.
             </p>
             <p>Article 9.2. Balises internet</p>
             <p className="pb-6">
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               peut employer occasionnellement des balises internet (également
               appelées « tags », ou balises d’action, gif transparent, gif
               invisibles, gif un à un) et les déployer par l’intermédiaire d’un
@@ -792,7 +795,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               Cette technologie permet à{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               d’évaluer les réponses des visiteurs face au site et l’efficacité
               de ses actions (par exemple, le nombre de fois d’une page est
               ouverte et les informations consultées), ainsi que l’utilisation
@@ -801,8 +804,8 @@ const MENTIONS_LEGALES: React.FC = () => {
             <p className="pb-6">
               Le prestataire externe pourra éventuellement recueillir des
               informations sur les visiteurs du site et d’autres sites internet
-              grce àces balises, constituer des rapports sur l’activité du site
-              à l’attention de{" "}
+              grâce à ces balises, constituer des rapports sur l’activité du
+              site à l’attention de{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
               </a>
@@ -819,7 +822,7 @@ const MENTIONS_LEGALES: React.FC = () => {
               Tout litige en relation avec l’utilisation du site{" "}
               <a className="hover:text-[#02ff1e]" href="https://www.cyna-it.fr">
                 https://www.cyna-it.fr
-              </a>
+              </a>{" "}
               est soumis au droit français. Il est fait attribution exclusive de
               juridiction aux tribunaux compétents de Paris.
             </p>

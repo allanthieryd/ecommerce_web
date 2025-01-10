@@ -12,6 +12,8 @@ export default {
       colors: {
         myprimary: "#7227b6",
         mysecondary: "#9333ea",
+        ctaButton: "#FF6B00",
+        ctaButton2: "#cc5500",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

@@ -3,6 +3,7 @@ import React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import SearchBar from "./searchBar"
+import Basket from "./basket"
 import Menu from "./menu"
 
 const Header = () => {
@@ -33,15 +34,16 @@ const Header = () => {
           />
         </Link>
 
-        <div className="md:flex-grow flex justify-evenly">
+        <div className="md:flex-grow flex md:justify-evenly">
           <SearchBar
             placeholder="Rechercher un produit..."
             onSearch={handleSearch}
           />
         </div>
-
-        {/* Menu */}
-        <Menu />
+        <div className="flex items-center space-x-1 sm:space-x-4 lg:space-x-8">
+          <Basket />
+          <Menu />
+        </div>
       </div>
     </header>
   )

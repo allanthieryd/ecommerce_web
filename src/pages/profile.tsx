@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 
 function Account() {
   const [userInfo, setUserInfo] = useState<any | null>(null)
+  const [selectedLanguage, setSelectedLanguage] = useState("fr")
 
   useEffect(() => {
     async function getUserInfo() {
@@ -48,6 +49,15 @@ function Account() {
     getUserInfo()
   }, [])
 
+  const languages = [
+    { code: "fr", label: "Français" },
+    { code: "en", label: "Anglais" },
+    { code: "es", label: "Espagnol" },
+    { code: "de", label: "Allemand" },
+    { code: "it", label: "Italien" },
+    { code: "ar", label: "Arabe" },
+  ]
+
   return (
     <main>
       <div className="container mx-auto bg-white shadow-md rounded-lg px-12 py-8">
@@ -71,7 +81,7 @@ function Account() {
 
             <div className="flex flex-col">
               <label
-                className="font-medium text-lg  text-black"
+                className="font-medium text-lg text-black"
                 htmlFor="prenom"
               >
                 Prénom
@@ -94,18 +104,44 @@ function Account() {
                 type="text"
                 value={userInfo.email}
                 readOnly
-                className="p-2 border rounded-md bg-gray-100  text-gray-600"
+                className="p-2 border rounded-md bg-gray-100 text-gray-600"
               />
+            </div>
+
+            <div className="space-y-2">
+              <h2 className="text-lg font-semibold text-black">
+                Mes Préférences
+              </h2>
+              <div className="flex flex-col">
+                <label
+                  className="font-medium text-lg text-black"
+                  htmlFor="langue"
+                >
+                  Modifier la langue
+                </label>
+                <select
+                  id="langue"
+                  value={selectedLanguage}
+                  onChange={(e) => setSelectedLanguage(e.target.value)}
+                  className="p-2 border rounded-md bg-gray-100 text-black"
+                >
+                  {languages.map((lang) => (
+                    <option key={lang.code} value={lang.code}>
+                      {lang.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
         ) : (
-          <p className="text-center text-white">
+          <p className="text-center text-black">
             Aucune information utilisateur trouvée.
           </p>
         )}
 
         <Button variant="default" className="w-full mt-4">
-          Modifier mes informations
+          Sauvegarder mes informations
         </Button>
       </div>
     </main>
